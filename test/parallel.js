@@ -44,7 +44,7 @@ describe("[parallel]", () => {
                         result() === "baab")
         })
 
-        it("npm-run-all command", async () => {
+        it("new-run-all command", async () => {
             await runAll(["--parallel", "test-task:append a", "test-task:append b"])
             assert(
                 result() === "abab" ||
@@ -80,7 +80,7 @@ describe("[parallel]", () => {
             assert(false, "should fail")
         })
 
-        it("npm-run-all command", async () => {
+        it("new-run-all command", async () => {
             try {
                 await runAll(["--parallel", "test-task:append2 a", "test-task:error"])
             }
@@ -109,7 +109,7 @@ describe("[parallel]", () => {
             assert(result() === "aa")
         })
 
-        it("npm-run-all command", async () => {
+        it("new-run-all command", async () => {
             await runAll(["--parallel", "test-task:*:a", "*:append:a"])
             assert(result() === "aa")
         })
@@ -126,7 +126,7 @@ describe("[parallel]", () => {
             assert(result() === "aaaa")
         })
 
-        it("npm-run-all command", async () => {
+        it("new-run-all command", async () => {
             await runAll(["--parallel", "test-task:*:a", "test-task:*:a"])
             assert(result() === "aaaa")
         })
@@ -138,10 +138,10 @@ describe("[parallel]", () => {
     })
 
     describe("should kill child processes when it's killed", () => {
-        it("npm-run-all command", async () => {
+        it("new-run-all command", async () => {
             await spawnWithKill(
                 "node",
-                ["../bin/npm-run-all/index.js", "--parallel", "test-task:append2 a"]
+                ["../bin/new-run-all/index.js", "--parallel", "test-task:append2 a"]
             )
             assert(result() == null || result() === "a")
         })
@@ -172,7 +172,7 @@ describe("[parallel]", () => {
             assert(false, "should fail.")
         })
 
-        it("npm-run-all command (--continue-on-error)", async () => {
+        it("new-run-all command (--continue-on-error)", async () => {
             try {
                 await runAll(["--continue-on-error", "--parallel", "test-task:append a", "test-task:error", "test-task:append b"])
             }
@@ -188,7 +188,7 @@ describe("[parallel]", () => {
             assert(false, "should fail.")
         })
 
-        it("npm-run-all command (-c)", async () => {
+        it("new-run-all command (-c)", async () => {
             try {
                 await runAll(["-cp", "test-task:append a", "test-task:error", "test-task:append b"])
             }
@@ -244,13 +244,13 @@ describe("[parallel]", () => {
             assert(result() === "a" || result() === "ab" || result() === "ba")
         })
 
-        it("npm-run-all command (--race)", async () => {
+        it("new-run-all command (--race)", async () => {
             await runAll(["--race", "--parallel", "test-task:append1 a", "test-task:append2 b"])
             await delay(5000)
             assert(result() === "a" || result() === "ab" || result() === "ba")
         })
 
-        it("npm-run-all command (-r)", async () => {
+        it("new-run-all command (-r)", async () => {
             await runAll(["-rp", "test-task:append1 a", "test-task:append2 b"])
             await delay(5000)
             assert(result() === "a" || result() === "ab" || result() === "ba")
@@ -293,7 +293,7 @@ describe("[parallel]", () => {
             )
         })
 
-        it("npm-run-all command", async () => {
+        it("new-run-all command", async () => {
             await runAll(["--parallel", "test-task:append a", "test-task:append b", "test-task:append c", "--max-parallel", "2"])
             assert(
                 result() === "ababcc" ||

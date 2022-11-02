@@ -1,5 +1,5 @@
 {
-  "name": "npm-run-all-test",
+  "name": "new-run-all-test",
   "version": "0.0.0",
   "private": true,
   "description": "",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mysticatea/npm-run-all.git"
+    "url": "https://github.com/norandiaconu/new-run-all.git"
   },
   "author": "Toru Nagashima",
   "license": "MIT"

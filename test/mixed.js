@@ -19,7 +19,7 @@ const runAll = util.runAll
 // Test
 //------------------------------------------------------------------------------
 
-describe("[mixed] npm-run-all", () => {
+describe("[mixed] new-run-all", () => {
     before(() => process.chdir("test-workspace"))
     after(() => process.chdir(".."))
 

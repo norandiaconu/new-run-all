@@ -1,5 +1,5 @@
 {
-  "name": "npm-run-all-test",
+  "name": "new-run-all-test",
   "version": "0.0.0",
   "private": true,
   "description": "",
@@ -15,10 +15,10 @@
     "stop": "node tasks/append2.js stop",
     "test-task:package-config": "node tasks/package-config1.js",
     "test-task:package-config2": "node tasks/package-config2.js",
-    "test-task:nested-package-config": "node ../bin/npm-run-all/index.js test-task:package-config",
+    "test-task:nested-package-config": "node ../bin/new-run-all/index.js test-task:package-config",
     "test-task:config": "node tasks/config1.js",
     "test-task:config2": "node tasks/config2.js",
-    "test-task:nested-config": "node ../bin/npm-run-all/index.js test-task:config",
+    "test-task:nested-config": "node ../bin/new-run-all/index.js test-task:config",
     "test-task:append": "node tasks/append2.js",
     "test-task:append:a": "node tasks/append2.js a",
     "test-task:append:a:c": "node tasks/append2.js ac",
@@ -35,17 +35,17 @@
     "test-task:issue14:posix": "../node_modules/.bin/rimraf build && mkdir $npm_package_config_DEST && cd build",
     "test-task:echo": "node tasks/echo.js",
     "test-task:dump": "node tasks/dump.js",
-    "test-task:nest-append:npm-run-all": "node ../bin/npm-run-all/index.js test-task:append",
+    "test-task:nest-append:new-run-all": "node ../bin/new-run-all/index.js test-task:append",
     "test-task:nest-append:run-s": "node ../bin/run-s/index.js test-task:append",
     "test-task:nest-append:run-p": "node ../bin/run-p/index.js test-task:append",
     "test-task:delayed": "node tasks/output-with-delay.js",
-    "test-task:yarn": "node ../bin/npm-run-all/index.js test-task:append:{a,b} --npm-path yarn",
+    "test-task:yarn": "node ../bin/new-run-all/index.js test-task:append:{a,b} --npm-path yarn",
     "!test": "node tasks/append1.js X",
     "?test": "node tasks/append1.js Q"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mysticatea/npm-run-all.git"
+    "url": "https://github.com/norandiaconu/new-run-all.git"
   },
   "author": "Toru Nagashima",
   "license": "MIT"

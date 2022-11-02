@@ -23,7 +23,7 @@ const runSeq = util.runSeq
 // Test
 //------------------------------------------------------------------------------
 
-describe("[sequencial] npm-run-all", () => {
+describe("[sequencial] new-run-all", () => {
     before(() => process.chdir("test-workspace"))
     after(() => process.chdir(".."))
 
@@ -40,7 +40,7 @@ describe("[sequencial] npm-run-all", () => {
             assert(result() === "aabb")
         })
 
-        it("npm-run-all command", async () => {
+        it("new-run-all command", async () => {
             await runAll(["test-task:append a", "test-task:append b"])
             assert(result() === "aabb")
         })
@@ -70,7 +70,7 @@ describe("[sequencial] npm-run-all", () => {
             assert(false, "should fail")
         })
 
-        it("npm-run-all command", async () => {
+        it("new-run-all command", async () => {
             try {
                 await runAll(["test-task:append2 a", "test-task:error", "test-task:append2 b"])
             }
@@ -99,7 +99,7 @@ describe("[sequencial] npm-run-all", () => {
             assert(result() === "aa")
         })
 
-        it("npm-run-all command", async () => {
+        it("new-run-all command", async () => {
             await runAll(["test-task:*:a", "*:append:a"])
             assert(result() === "aa")
         })
@@ -116,7 +116,7 @@ describe("[sequencial] npm-run-all", () => {
             assert(result() === "aaaa")
         })
 
-        it("npm-run-all command", async () => {
+        it("new-run-all command", async () => {
             await runAll(["test-task:*:a", "test-task:*:a"])
             assert(result() === "aaaa")
         })
@@ -128,10 +128,10 @@ describe("[sequencial] npm-run-all", () => {
     })
 
     describe("should kill child processes when it's killed", () => {
-        it("npm-run-all command", async () => {
+        it("new-run-all command", async () => {
             await spawnWithKill(
                 "node",
-                ["../bin/npm-run-all.js", "test-task:append2 a"]
+                ["../bin/new-run-all.js", "test-task:append2 a"]
             )
             assert(result() == null || result() === "a")
         })
@@ -157,7 +157,7 @@ describe("[sequencial] npm-run-all", () => {
             assert(false, "should fail")
         })
 
-        it("npm-run-all command (--continue-on-error)", async () => {
+        it("new-run-all command (--continue-on-error)", async () => {
             try {
                 await runAll(["--continue-on-error", "test-task:append a", "test-task:error", "test-task:append b"])
             }
@@ -179,7 +179,7 @@ describe("[sequencial] npm-run-all", () => {
             assert(false, "should fail")
         })
 
-        it("npm-run-all command (-c)", async () => {
+        it("new-run-all command (-c)", async () => {
             try {
                 await runAll(["-c", "test-task:append a", "test-task:error", "test-task:append b"])
             }

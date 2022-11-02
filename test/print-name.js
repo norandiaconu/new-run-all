@@ -23,7 +23,7 @@ const runSeq = util.runSeq
 // Test
 //------------------------------------------------------------------------------
 
-describe("[print-name] npm-run-all", () => {
+describe("[print-name] new-run-all", () => {
     let packageInfo = null
 
     before(() => {
@@ -42,7 +42,7 @@ describe("[print-name] npm-run-all", () => {
             assert.equal(stdout.value.slice(0, header.length), header)
         })
 
-        it("npm-run-all command (--print-name)", async () => {
+        it("new-run-all command (--print-name)", async () => {
             const stdout = new BufferStream()
             await runAll(["test-task:echo abc", "--silent", "--print-name"], stdout)
             const header = createHeader("test-task:echo abc", packageInfo, false)
@@ -63,7 +63,7 @@ describe("[print-name] npm-run-all", () => {
             assert.equal(stdout.value.slice(0, header.length), header)
         })
 
-        it("npm-run-all command (-n)", async () => {
+        it("new-run-all command (-n)", async () => {
             const stdout = new BufferStream()
             await runAll(["test-task:echo abc", "--silent", "-n"], stdout)
             const header = createHeader("test-task:echo abc", packageInfo, false)

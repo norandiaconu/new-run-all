@@ -34,7 +34,7 @@ describe("[pattern] it should run matched tasks if glob like patterns are given.
             assert(result() === "aabb")
         })
 
-        it("npm-run-all command", async () => {
+        it("new-run-all command", async () => {
             await runAll(["test-task:append:*"])
             assert(result() === "aabb")
         })
@@ -61,7 +61,7 @@ describe("[pattern] it should run matched tasks if glob like patterns are given.
             assert(result() === "aaacacadadbb")
         })
 
-        it("npm-run-all command", async () => {
+        it("new-run-all command", async () => {
             await runAll(["test-task:append:**:*"])
             assert(result() === "aaacacadadbb")
         })
@@ -78,7 +78,7 @@ describe("[pattern] it should run matched tasks if glob like patterns are given.
             assert(result() === "bbaa")
         })
 
-        it("npm-run-all command", async () => {
+        it("new-run-all command", async () => {
             await runAll(["test-task:append:b", "test-task:append:*"])
             assert(result() === "bbaa")
         })
@@ -110,7 +110,7 @@ describe("[pattern] it should run matched tasks if glob like patterns are given.
             }
         })
 
-        it("npm-run-all command", async () => {
+        it("new-run-all command", async () => {
             const stderr = new BufferStream()
             try {
                 await runAll(["a"], null, stderr)
@@ -155,7 +155,7 @@ describe("[pattern] it should run matched tasks if glob like patterns are given.
             }
         })
 
-        it("npm-run-all command", async () => {
+        it("new-run-all command", async () => {
             const stderr = new BufferStream()
             try {
                 await runAll(["!test-task:**"], null, stderr)
@@ -195,7 +195,7 @@ describe("[pattern] it should run matched tasks if glob like patterns are given.
             assert(result().trim() === "XQ")
         })
 
-        it("npm-run-all command", async () => {
+        it("new-run-all command", async () => {
             await runAll(["!test", "?test"])
             assert(result().trim() === "XQ")
         })

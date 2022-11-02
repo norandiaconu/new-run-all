@@ -47,12 +47,12 @@ describe("[fail] it should fail", () => {
     afterEach(() => delay(1000))
 
     describe("if an invalid option exists.", () => {
-        it("npm-run-all command", () => shouldFail(runAll(["--invalid"])))
+        it("new-run-all command", () => shouldFail(runAll(["--invalid"])))
         it("run-s command", () => shouldFail(runSeq(["--parallel"])))
         it("run-p command", () => shouldFail(runPar(["--sequential"])))
 
-        it("npm-run-all command with --race without --parallel", () => shouldFail(runAll(["--race"])))
-        it("npm-run-all command with --r without --parallel", () => shouldFail(runAll(["--r"])))
+        it("new-run-all command with --race without --parallel", () => shouldFail(runAll(["--race"])))
+        it("new-run-all command with --r without --parallel", () => shouldFail(runAll(["--r"])))
         it("run-s command with --race", () => shouldFail(runSeq(["--race"])))
         it("run-s command with --r", () => shouldFail(runSeq(["--r"])))
     })
@@ -63,14 +63,14 @@ describe("[fail] it should fail", () => {
 
     describe("if unknown tasks are given:", () => {
         it("Node API", () => shouldFail(nodeApi("unknown-task")))
-        it("npm-run-all command", () => shouldFail(runAll(["unknown-task"])))
+        it("new-run-all command", () => shouldFail(runAll(["unknown-task"])))
         it("run-s command", () => shouldFail(runSeq(["unknown-task"])))
         it("run-p command", () => shouldFail(runPar(["unknown-task"])))
     })
 
     describe("if unknown tasks are given (2):", () => {
         it("Node API", () => shouldFail(nodeApi(["test-task:append:a", "unknown-task"])))
-        it("npm-run-all command", () => shouldFail(runAll(["test-task:append:a", "unknown-task"])))
+        it("new-run-all command", () => shouldFail(runAll(["test-task:append:a", "unknown-task"])))
         it("run-s command", () => shouldFail(runSeq(["test-task:append:a", "unknown-task"])))
         it("run-p command", () => shouldFail(runPar(["test-task:append:a", "unknown-task"])))
     })
@@ -80,7 +80,7 @@ describe("[fail] it should fail", () => {
         after(() => process.chdir(".."))
 
         it("Node API", () => shouldFail(nodeApi(["test-task:append:a"])))
-        it("npm-run-all command", () => shouldFail(runAll(["test-task:append:a"])))
+        it("new-run-all command", () => shouldFail(runAll(["test-task:append:a"])))
         it("run-s command", () => shouldFail(runSeq(["test-task:append:a"])))
         it("run-p command", () => shouldFail(runPar(["test-task:append:a"])))
     })
@@ -90,21 +90,21 @@ describe("[fail] it should fail", () => {
         after(() => process.chdir(".."))
 
         it("Node API", () => shouldFail(nodeApi(["test-task:append:a"])))
-        it("npm-run-all command", () => shouldFail(runAll(["test-task:append:a"])))
+        it("new-run-all command", () => shouldFail(runAll(["test-task:append:a"])))
         it("run-s command", () => shouldFail(runSeq(["test-task:append:a"])))
         it("run-p command", () => shouldFail(runPar(["test-task:append:a"])))
     })
 
     describe("if tasks exited with non-zero code:", () => {
         it("Node API", () => shouldFail(nodeApi("test-task:error")))
-        it("npm-run-all command", () => shouldFail(runAll(["test-task:error"])))
+        it("new-run-all command", () => shouldFail(runAll(["test-task:error"])))
         it("run-s command", () => shouldFail(runSeq(["test-task:error"])))
         it("run-p command", () => shouldFail(runPar(["test-task:error"])))
     })
 
     describe("if tasks exited via a signal:", () => {
         it("Node API", () => shouldFail(nodeApi("test-task:abort")))
-        it("npm-run-all command", () => shouldFail(runAll(["test-task:abort"])))
+        it("new-run-all command", () => shouldFail(runAll(["test-task:abort"])))
         it("run-s command", () => shouldFail(runSeq(["test-task:abort"])))
         it("run-p command", () => shouldFail(runPar(["test-task:abort"])))
         it("with correct exit code", () => nodeApi("test-task:abort").then(() =>

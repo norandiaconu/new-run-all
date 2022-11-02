@@ -22,7 +22,7 @@ const runSeq = util.runSeq
 // Test
 //------------------------------------------------------------------------------
 
-describe("[aggregated-output] npm-run-all", () => {
+describe("[aggregated-output] new-run-all", () => {
     before(() => process.chdir("test-workspace"))
     after(() => process.chdir(".."))
 
@@ -70,7 +70,7 @@ describe("[aggregated-output] npm-run-all", () => {
             assert(false, "should fail")
         })
 
-        it("npm-run-all command with parallel", async () => {
+        it("new-run-all command with parallel", async () => {
             await runAll(
                 ["--parallel", "test-task:delayed first 5000", "test-task:delayed second 1000", "test-task:delayed third 3000", "--silent", "--aggregate-output"],
                 stdout
@@ -78,7 +78,7 @@ describe("[aggregated-output] npm-run-all", () => {
             assert.equal(stdout.value, EXPECTED_PARALLELIZED_TEXT)
         })
 
-        it("npm-run-all command without parallel should fail", async () => {
+        it("new-run-all command without parallel should fail", async () => {
             try {
                 await runAll(
                     ["test-task:delayed first 5000", "test-task:delayed second 1000", "test-task:delayed third 3000", "--silent", "--aggregate-output"],

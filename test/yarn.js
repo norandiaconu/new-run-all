@@ -56,7 +56,7 @@ const nodeVersion = Number(process.versions.node.split(".")[0])
     beforeEach(removeResult)
 
     describe("'yarn run' command", () => {
-        it("should run 'npm-run-all' in scripts with yarn.", async () => {
+        it("should run 'new-run-all' in scripts with yarn.", async () => {
             await exec("yarn", ["run", "test-task:yarn"])
             assert(result() === "aabb")
         })

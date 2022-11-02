@@ -34,12 +34,12 @@ describe("[argument-placeholders]", () => {
                 .then(() => assert(result() === "[]"))
         )
 
-        it("npm-run-all command", () =>
+        it("new-run-all command", () =>
             runAll(["test-task:dump {1}"])
                 .then(() => assert(result() === "[]"))
         )
 
-        it("npm-run-all command (only '--' exists)", () =>
+        it("new-run-all command (only '--' exists)", () =>
             runAll(["test-task:dump {1}", "--"])
                 .then(() => assert(result() === "[]"))
         )
@@ -71,7 +71,7 @@ describe("[argument-placeholders]", () => {
                 .then(() => assert(result() === "[\"1st\"]"))
         )
 
-        it("npm-run-all command", () =>
+        it("new-run-all command", () =>
             runAll(["test-task:dump {1}", "--", "1st", "2nd"])
                 .then(() => assert(result() === "[\"1st\"]"))
         )
@@ -93,7 +93,7 @@ describe("[argument-placeholders]", () => {
                 .then(() => assert(result() === "[\"2nd\"]"))
         )
 
-        it("npm-run-all command", () =>
+        it("new-run-all command", () =>
             runAll(["test-task:dump {2}", "--", "1st", "2nd"])
                 .then(() => assert(result() === "[\"2nd\"]"))
         )
@@ -115,7 +115,7 @@ describe("[argument-placeholders]", () => {
                 .then(() => assert(result() === "[\"1st\",\"2nd\"]"))
         )
 
-        it("npm-run-all command", () =>
+        it("new-run-all command", () =>
             runAll(["test-task:dump {@}", "--", "1st", "2nd"])
                 .then(() => assert(result() === "[\"1st\",\"2nd\"]"))
         )
@@ -137,7 +137,7 @@ describe("[argument-placeholders]", () => {
                 .then(() => assert(result() === "[\"1st 2nd\"]"))
         )
 
-        it("npm-run-all command", () =>
+        it("new-run-all command", () =>
             runAll(["test-task:dump {*}", "--", "1st", "2nd"])
                 .then(() => assert(result() === "[\"1st 2nd\"]"))
         )
@@ -159,7 +159,7 @@ describe("[argument-placeholders]", () => {
                 .then(() => assert(result() === "[\"1st\",\"2nd\",\"1st\",\"2nd\",\"1st 2nd\"]"))
         )
 
-        it("npm-run-all command", () =>
+        it("new-run-all command", () =>
             runAll(["test-task:dump {1} {2} {3} {@} {*}", "--", "1st", "2nd"])
                 .then(() => assert(result() === "[\"1st\",\"2nd\",\"1st\",\"2nd\",\"1st 2nd\"]"))
         )
@@ -181,7 +181,7 @@ describe("[argument-placeholders]", () => {
                 .then(() => assert(result() === "[\"foo\"]"))
         )
 
-        it("npm-run-all command", () =>
+        it("new-run-all command", () =>
             runAll(["test-task:dump {1:-foo} {1}"])
                 .then(() => assert(result() === "[\"foo\"]"))
         )
@@ -203,7 +203,7 @@ describe("[argument-placeholders]", () => {
                 .then(() => assert(result() === "[\"foo\",\"foo\"]"))
         )
 
-        it("npm-run-all command", () =>
+        it("new-run-all command", () =>
             runAll(["test-task:dump {1:=foo} {1}"])
                 .then(() => assert(result() === "[\"foo\",\"foo\"]"))
         )

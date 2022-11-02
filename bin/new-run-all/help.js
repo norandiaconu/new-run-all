@@ -19,8 +19,8 @@
 module.exports = function printHelp(output) {
     output.write(`
 Usage:
-    $ npm-run-all [--help | -h | --version | -v]
-    $ npm-run-all [tasks] [OPTIONS]
+    $ new-run-all [--help | -h | --version | -v]
+    $ new-run-all [tasks] [OPTIONS]
 
     Run given npm-scripts in parallel or sequential.
 
@@ -31,7 +31,7 @@ Options:
                                each command's output until it has finished.
     -c, --continue-on-error  - Set the flag to continue executing
                                other/subsequent tasks even if a task threw an
-                               error. 'npm-run-all' itself will exit with
+                               error. 'new-run-all' itself will exit with
                                non-zero code if one or more tasks threw error(s)
     --max-parallel <number>  - Set the maximum number of parallelism. Default is
                                unlimited.
@@ -46,25 +46,25 @@ Options:
     -n, --print-name   - - - - Set the flag to print the task name before
                                running each task.
     -p, --parallel <tasks>   - Run a group of tasks in parallel.
-                               e.g. 'npm-run-all -p foo bar' is similar to
+                               e.g. 'new-run-all -p foo bar' is similar to
                                     'npm run foo & npm run bar'.
     -r, --race   - - - - - - - Set the flag to kill all tasks when a task
                                finished with zero. This option is valid only
                                with 'parallel' option.
     -s, --sequential <tasks> - Run a group of tasks sequentially.
-        --serial <tasks>       e.g. 'npm-run-all -s foo bar' is similar to
+        --serial <tasks>       e.g. 'new-run-all -s foo bar' is similar to
                                     'npm run foo && npm run bar'.
                                '--serial' is a synonym of '--sequential'.
     --silent   - - - - - - - - Set 'silent' to the log level of npm.
 
 Examples:
-    $ npm-run-all --serial clean lint build:**
-    $ npm-run-all --parallel watch:**
-    $ npm-run-all clean lint --parallel "build:** -- --watch"
-    $ npm-run-all -l -p start-server start-browser start-electron
+    $ new-run-all --serial clean lint build:**
+    $ new-run-all --parallel watch:**
+    $ new-run-all clean lint --parallel "build:** -- --watch"
+    $ new-run-all -l -p start-server start-browser start-electron
 
 See Also:
-    https://github.com/mysticatea/npm-run-all#readme
+    https://github.com/norandiaconu/new-run-all#readme
 `)
 
     return Promise.resolve(null)

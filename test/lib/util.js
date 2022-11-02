@@ -19,7 +19,7 @@ const BufferStream = require("./buffer-stream")
 //------------------------------------------------------------------------------
 
 const FILE_NAME = "test.txt"
-const NPM_RUN_ALL = path.resolve(__dirname, "../../bin/npm-run-all/index.js")
+const NPM_RUN_ALL = path.resolve(__dirname, "../../bin/new-run-all/index.js")
 const RUN_P = path.resolve(__dirname, "../../bin/run-p/index.js")
 const RUN_S = path.resolve(__dirname, "../../bin/run-s/index.js")
 
@@ -126,7 +126,7 @@ module.exports.delay = function delay(timeoutInMillis) {
 }
 
 /**
- * Executes `npm-run-all` with the given arguments.
+ * Executes `new-run-all` with the given arguments.
  *
  * @param {string[]} args - The arguments to execute.
  * @param {Writable} [stdout] - The writable stream to receive stdout.

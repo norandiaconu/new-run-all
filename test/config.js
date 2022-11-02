@@ -39,7 +39,7 @@ describe("[config] it should have an ability to set config variables:", () => {
     })
 
     describe("CLI commands should address \"--a=b\" style options", () => {
-        it("npm-run-all command", async () => {
+        it("new-run-all command", async () => {
             await runAll(["test-task:config", "--test=GO"])
             assert(result() === "GO")
         })
@@ -56,7 +56,7 @@ describe("[config] it should have an ability to set config variables:", () => {
     })
 
     describe("CLI commands should address \"--b=c\" style options for multiple variables", () => {
-        it("npm-run-all command", async () => {
+        it("new-run-all command", async () => {
             await runAll(["test-task:config2", "--test=1", "--test2=2", "--test3=3"])
             assert(result() === "1\n2\n3")
         })
@@ -73,7 +73,7 @@ describe("[config] it should have an ability to set config variables:", () => {
     })
 
     describe("CLI commands should transfar configs to nested commands.", () => {
-        it("npm-run-all command", async () => {
+        it("new-run-all command", async () => {
             await runAll(["test-task:nested-config", "--test=GO DEEP"])
             assert(result() === "GO DEEP")
         })

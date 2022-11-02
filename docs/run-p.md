@@ -1,10 +1,10 @@
-| [index](../README.md) | [npm-run-all](npm-run-all.md) | [run-s](run-s.md) | run-p | [Node API](node-api.md) |
+| [index](../README.md) | [new-run-all](new-run-all.md) | [run-s](run-s.md) | run-p | [Node API](node-api.md) |
 |-----------------------|-------------------------------|-------------------|-------|-------------------------|
 
 # `run-p` command
 
 A CLI command to run given npm-scripts in parallel.
-This command is the shorthand of `npm-run-all -p`.
+This command is the shorthand of `new-run-all -p`.
 
 ```
 Usage:

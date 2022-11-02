@@ -59,7 +59,7 @@ Examples:
     $ run-p start-server start-browser start-electron
 
 See Also:
-    https://github.com/mysticatea/npm-run-all#readme
+    https://github.com/norandiaconu/new-run-all#readme
 `)
 
     return Promise.resolve(null)

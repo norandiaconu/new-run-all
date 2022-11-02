@@ -1,11 +1,11 @@
 {
-  "name": "npm-run-all",
-  "version": "4.1.5",
+  "name": "new-run-all",
+  "version": "1.0.0",
   "description": "A CLI tool to run multiple npm-scripts in parallel or sequential.",
   "bin": {
     "run-p": "bin/run-p/index.js",
     "run-s": "bin/run-s/index.js",
-    "npm-run-all": "bin/npm-run-all/index.js"
+    "new-run-all": "bin/new-run-all/index.js"
   },
   "main": "lib/index.js",
   "files": [
@@ -45,17 +45,17 @@
     "babel-preset-power-assert": "^2.0.0",
     "babel-register": "^6.26.0",
     "codecov": "^3.1.0",
-    "eslint": "^4.19.1",
+    "eslint": "4.19.1",
     "eslint-config-mysticatea": "^12.0.0",
     "fs-extra": "^7.0.1",
-    "mocha": "^5.2.0",
-    "nyc": "^11.9.0",
+    "mocha": "9.2.2",
+    "nyc": "13.3.0",
     "p-queue": "^2.4.2",
     "power-assert": "^1.6.1",
     "rimraf": "^2.6.2",
     "yarn": "^1.12.3"
   },
-  "repository": "mysticatea/npm-run-all",
+  "repository": "norandiaconu/new-run-all",
   "keywords": [
     "cli",
     "command",
@@ -69,10 +69,10 @@
     "parallel",
     "task"
   ],
-  "author": "Toru Nagashima",
+  "author": "Noran Diaconu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mysticatea/npm-run-all/issues"
+    "url": "https://github.com/norandiaconu/new-run-all/issues"
   },
-  "homepage": "https://github.com/mysticatea/npm-run-all"
+  "homepage": "https://github.com/norandiaconu/new-run-all"
 }
