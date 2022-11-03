@@ -1,8 +1,11 @@
 {
     "root": true,
-    "extends": ["mysticatea", "mysticatea/node"],
+    "extends": ["mysticatea/node"],
     "rules": {
         "prefer-rest-params": "off",
         "prefer-spread": "off"
+    },
+    "parserOptions": {
+        "ecmaVersion": 2017
     }
 }

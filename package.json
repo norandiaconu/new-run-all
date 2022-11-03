@@ -29,15 +29,13 @@
     "codecov": "nyc report -r lcovonly && codecov"
   },
   "dependencies": {
-    "ansi-styles": "^3.2.1",
     "chalk": "^2.4.1",
     "cross-spawn": "^6.0.5",
     "memorystream": "^0.3.1",
     "minimatch": "^3.0.4",
     "pidtree": "^0.3.0",
     "read-pkg": "^3.0.0",
-    "shell-quote": "^1.6.1",
-    "string.prototype.padend": "^3.0.0"
+    "shell-quote": "^1.6.1"
   },
   "devDependencies": {
     "@types/node": "^4.9.1",
@@ -45,12 +43,12 @@
     "babel-preset-power-assert": "^2.0.0",
     "babel-register": "^6.26.0",
     "codecov": "^3.1.0",
-    "eslint": "4.19.1",
+    "eslint": "7.32.0",
     "eslint-config-mysticatea": "^12.0.0",
     "fs-extra": "^7.0.1",
     "mocha": "9.2.2",
-    "nyc": "13.3.0",
-    "p-queue": "^2.4.2",
+    "nyc": "14.1.1",
+    "p-queue": "2.4.2",
     "power-assert": "^1.6.1",
     "rimraf": "^2.6.2",
     "yarn": "^1.12.3"
