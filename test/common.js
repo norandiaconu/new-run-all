@@ -315,21 +315,11 @@ describe("[common]", () => {
     })
 
     // https://github.com/mysticatea/npm-run-all/issues/105
-    describe("should not print MaxListenersExceededWarning when it runs 10 tasks:", () => {
-        const tasks = Array.from({ length: 10 }, () => "test-task:append:a")
+    describe("should not print MaxListenersExceededWarning when it runs over 10 tasks:", () => {
+        const tasks = Array.from({ length: 11 }, () => "test-task:append:a")
 
-        it("new-run-all command", async () => {
-            const buf = new BufferStream()
-            await runAll(tasks, null, buf)
-            assert(buf.value.indexOf("MaxListenersExceededWarning") === -1)
-        })
-
-        it("run-s command", async () => {
-            const buf = new BufferStream()
-            await runSeq(tasks, null, buf)
-            assert(buf.value.indexOf("MaxListenersExceededWarning") === -1)
-        })
-
+        // only run-p would cause this
+        // removing new-run-all/run-s tasks as they were longest running tasks
         it("run-p command", async () => {
             const buf = new BufferStream()
             await runPar(tasks, null, buf)

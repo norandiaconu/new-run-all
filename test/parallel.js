@@ -27,7 +27,7 @@ describe("[parallel]", () => {
     before(() => process.chdir("test-workspace"))
     after(() => process.chdir(".."))
 
-    beforeEach(() => delay(1000).then(removeResult))
+    beforeEach(() => delay(100).then(removeResult))
 
     describe("should run tasks on parallel when was given --parallel option:", () => {
         it("Node API", async () => {
@@ -240,37 +240,37 @@ describe("[parallel]", () => {
     describe("should abort other tasks when a task finished, when --race option was specified:", () => {
         it("Node API", async () => {
             await nodeApi(["test-task:append1 a", "test-task:append2 b"], { parallel: true, race: true })
-            await delay(5000)
+            await delay(100)
             assert(result() === "a" || result() === "ab" || result() === "ba")
         })
 
         it("new-run-all command (--race)", async () => {
             await runAll(["--race", "--parallel", "test-task:append1 a", "test-task:append2 b"])
-            await delay(5000)
+            await delay(100)
             assert(result() === "a" || result() === "ab" || result() === "ba")
         })
 
         it("new-run-all command (-r)", async () => {
             await runAll(["-rp", "test-task:append1 a", "test-task:append2 b"])
-            await delay(5000)
+            await delay(100)
             assert(result() === "a" || result() === "ab" || result() === "ba")
         })
 
         it("run-p command (--race)", async () => {
             await runPar(["--race", "test-task:append1 a", "test-task:append2 b"])
-            await delay(5000)
+            await delay(100)
             assert(result() === "a" || result() === "ab" || result() === "ba")
         })
 
         it("run-p command (-r)", async () => {
             await runPar(["-r", "test-task:append1 a", "test-task:append2 b"])
-            await delay(5000)
+            await delay(100)
             assert(result() === "a" || result() === "ab" || result() === "ba")
         })
 
         it("run-p command (no -r)", async () => {
             await runPar(["test-task:append1 a", "test-task:append2 b"])
-            await delay(5000)
+            await delay(100)
             assert(result() === "abb" || result() === "bab")
         })
     })

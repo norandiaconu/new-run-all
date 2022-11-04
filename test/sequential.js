@@ -27,7 +27,7 @@ describe("[sequencial] new-run-all", () => {
     before(() => process.chdir("test-workspace"))
     after(() => process.chdir(".."))
 
-    beforeEach(() => delay(1000).then(removeResult))
+    beforeEach(() => delay(100).then(removeResult))
 
     describe("should run tasks sequentially:", () => {
         it("Node API", async () => {

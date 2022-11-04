@@ -44,7 +44,7 @@ describe("[fail] it should fail", () => {
     after(() => process.chdir(".."))
 
     beforeEach(removeResult)
-    afterEach(() => delay(1000))
+    afterEach(() => delay(100))
 
     describe("if an invalid option exists.", () => {
         it("new-run-all command", () => shouldFail(runAll(["--invalid"])))
